@@ -13,8 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WepApi.DTOs\WepApi.DTOs.csproj" />
-    <ProjectReference Include="..\WepApi.Models\WepApi.Models.csproj" />
+    <ProjectReference Include="..\WepApi.DTOs\WebApi.DTOs.csproj" />
+    <ProjectReference Include="..\WepApi.Models\WebApi.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Servicios\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>

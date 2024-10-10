@@ -5,11 +5,11 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_Capacitacion", "API_Capacitacion\API_Capacitacion.csproj", "{56CD9A24-6398-4B68-AD32-09388FA49741}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WepApi.DTOs", "WepApi.DTOs\WepApi.DTOs.csproj", "{62E4DDC5-491E-4C86-8276-CA3B8F7C2DB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.DTOs", "WepApi.DTOs\WebApi.DTOs.csproj", "{62E4DDC5-491E-4C86-8276-CA3B8F7C2DB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WepApi.Data", "WepApi.Data\WepApi.Data.csproj", "{67FAFA06-4374-4115-8653-47C3CE50A27B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Data", "WepApi.Data\WebApi.Data.csproj", "{67FAFA06-4374-4115-8653-47C3CE50A27B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WepApi.Models", "WepApi.Models\WepApi.Models.csproj", "{D4845AD7-3051-4292-8EF9-B3C10BD6410E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Models", "WepApi.Models\WebApi.Models.csproj", "{D4845AD7-3051-4292-8EF9-B3C10BD6410E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

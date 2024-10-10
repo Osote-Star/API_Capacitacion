@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WepApi.Data\WepApi.Data.csproj" />
-    <ProjectReference Include="..\WepApi.DTOs\WepApi.DTOs.csproj" />
-    <ProjectReference Include="..\WepApi.Models\WepApi.Models.csproj" />
+    <ProjectReference Include="..\WepApi.Data\WebApi.Data.csproj" />
+    <ProjectReference Include="..\WepApi.DTOs\WebApi.DTOs.csproj" />
+    <ProjectReference Include="..\WepApi.Models\WebApi.Models.csproj" />
   </ItemGroup>
 
 </Project>
