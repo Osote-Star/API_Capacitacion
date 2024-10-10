@@ -1,0 +1,6 @@
+@API_Capacitacion_HostAddress = http://localhost:5283
+
+GET {{API_Capacitacion_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
