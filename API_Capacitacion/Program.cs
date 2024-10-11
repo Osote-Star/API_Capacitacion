@@ -1,4 +1,6 @@
 using WebApi.Data;
+using WebApi.Data.Servicios;
+using WebApi.Data.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 PostgresssqlConfiguration postgresssqlConfiguration = new(Environment.GetEnvironmentVariable("CONNECTION_STRING"));
+builder.Services.AddSingleton(postgresssqlConfiguration);
+
+builder.Services.AddScoped<ITaskService, TaskService>();
 
 var app = builder.Build();
 
