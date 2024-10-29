@@ -44,14 +44,24 @@ namespace WEBAPI.Controllers
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Update(UpdateUserDto updateUserDto)
         {
+            UserModel? user = await _service.Update(updateUserDto);
+
+            if (user == null) return NotFound();
+
+            return Ok(user);
         }
 
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            UserModel? user = await _service.Remove(id);
+
+            if (user == null) return NotFound();
+
+            return Ok(user);
         }
     }
 }

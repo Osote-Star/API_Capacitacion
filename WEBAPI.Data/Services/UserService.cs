@@ -20,7 +20,7 @@ namespace WEBAPI.Data.Services
         {
             using NpgsqlConnection database = CreateConnection();
             string sqlQuery = "Select * from fun_user_create (" +
-                " p_nombre := @name, " +
+                " p_nombres := @name, " +
                 " p_usuario := @user, " +
                 " p_contrasena := @contrasena " +
                 ")";
@@ -162,17 +162,61 @@ namespace WEBAPI.Data.Services
         #endregion
 
         #region Remove
-        public Task<UserModel?> Remove(int userId)
+        public async Task<UserModel?> Remove(int userId)
         {
-            throw new NotImplementedException();
+            using NpgsqlConnection database = CreateConnection();
+            string sqlQuery = "Select * from fun_user_remove (" +
+                " p_idusuario := @IDusuario)";
+
+            try
+            {
+                await database.OpenAsync();
+
+                var result = await database.QueryAsync<UserModel>(
+                    sqlQuery,
+                    param: new
+                    {
+                        IDusuario = userId
+                    });
+                await database.CloseAsync();
+                return result.FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
         #endregion
 
         #region Update
-        public Task<UserModel?> Update(UpdateUserDto updateUserDto)
+        public async Task<UserModel?> Update(UpdateUserDto updateUserDto)
         {
-            throw new NotImplementedException();
+            using NpgsqlConnection database = CreateConnection();
+            string sqlQuery = "Select * from fun_user_update (" +
+                " p_nombres := @name, " +
+                " p_usuario := @user, " +
+                " p_contrasena := @contrasena " +
+                ")";
+            try
+            {
+                await database.OpenAsync();
+
+                var result = await database.QueryAsync<UserModel>(
+                    sqlQuery,
+                    param: new
+                    {
+                        name = updateUserDto.Names,
+                        user = updateUserDto.UserName,
+                        contrasena = updateUserDto.Password
+                    });
+                await database.CloseAsync();
+                return result.FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
-        #endregion
     }
+        #endregion
 }
