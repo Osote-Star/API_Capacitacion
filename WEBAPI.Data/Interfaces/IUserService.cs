@@ -8,7 +8,7 @@ namespace WEBAPI.Data.Interfaces
         public Task<UserModel?> Create(CreateUserDto CreateUserDto);
         public Task<IEnumerable<UserModel>> FindAll();
         public Task<UserModel?> FindOne(int userId);
-        public Task<UserModel?> Update(UpdateUserDto updateUserDto);
+        public Task<UserModel?> Update(int userID,UpdateUserDto updateUserDto);
         public Task<UserModel?> Remove(int userId);
     }
 }

@@ -189,10 +189,11 @@ namespace WEBAPI.Data.Services
         #endregion
 
         #region Update
-        public async Task<UserModel?> Update(UpdateUserDto updateUserDto)
+        public async Task<UserModel?> Update(int userID, UpdateUserDto updateUserDto)
         {
             using NpgsqlConnection database = CreateConnection();
             string sqlQuery = "Select * from fun_user_update (" +
+                " p_idusuario := @ID," +
                 " p_nombres := @name, " +
                 " p_usuario := @user, " +
                 " p_contrasena := @contrasena " +
@@ -205,6 +206,7 @@ namespace WEBAPI.Data.Services
                     sqlQuery,
                     param: new
                     {
+                        ID = userID ,
                         name = updateUserDto.Names,
                         user = updateUserDto.UserName,
                         contrasena = updateUserDto.Password

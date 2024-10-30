@@ -43,10 +43,10 @@ namespace WEBAPI.Controllers
         }
 
         // PUT api/<UserController>/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(UpdateUserDto updateUserDto)
+        [HttpPut("{userID}")]
+        public async Task<IActionResult> Put(int userID,UpdateUserDto updateUserDto)
         {
-            UserModel? user = await _service.Update(updateUserDto);
+            UserModel? user = await _service.Update(userID,updateUserDto);
 
             if (user == null) return NotFound();
 
